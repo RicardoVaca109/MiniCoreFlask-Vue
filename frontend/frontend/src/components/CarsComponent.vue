@@ -15,7 +15,7 @@
       />
       <div class="row">
         <div class="col-sm-12" style="font-size: 25px">
-          <p>Repositorio de Carros</p>
+          <h1 class="text-center bg-primary text-white" style="border-radius: 10px;">Repositorio de Carros</h1>
           <hr />
           <br />
           <!--Alert Message-->
@@ -45,19 +45,23 @@
               </tr>
             </thead>
             <tbody>
-              <tr>
-                <td>Hyndai</td>
-                <td>I10</td>
-                <td>PGB-8932</td>
-                <td>Tomate</td>
-                <td>Sedán</td>
-                <td>Carlos Vaca</td>
-                <td>09999</td>
-                <td>09999</td>
+              <tr v-for="vehiculo in vehiculos" :key="vehiculo.id">
+                <td>{{ vehiculo.marca }}</td>
+                <td>{{ vehiculo.modelo }}</td>
+                <td>{{ vehiculo.placa }}</td>
+                <td>{{ vehiculo.color }}</td>
+                <td>{{ vehiculo.tipo_vehiculo }}</td>
+                <td>{{ vehiculo.propietario }}</td>
+                <td>{{ vehiculo.telefono }}</td>
+                <td>{{ vehiculo.correo }}</td>
                 <td>
                   <div class="btn-group" role="group">
-                    <button type="button" class="btn btn-info">Actualizar</button>
-                    <button type="button" class="btn btn-danger">Eliminar</button>
+                    <button type="button" class="btn btn-info">
+                      Actualizar
+                    </button>
+                    <button type="button" class="btn btn-danger">
+                      Eliminar
+                    </button>
                   </div>
                 </td>
               </tr>
@@ -65,6 +69,42 @@
           </table>
         </div>
       </div>
+      
     </div>
   </div>
 </template>
+
+<script>
+import axios from "axios";
+export default {
+  data() {
+    return {
+      vehiculos: [],
+      addVehiculoForm: {
+        marca: "",
+        modelo: "",
+        placa: "",
+        color: "",
+        tipo_vehiculo: "",
+      },
+    };
+  },
+
+  methods: {
+    getVehiculos() {
+      const path = "http://localhost:5000/vehiculos";
+      axios
+        .get(path)
+        .then((res) => {
+          this.vehiculos = res.data;
+        })
+        .catch((err) => {
+          console.error(err);
+        });
+    },
+  },
+  created() {
+    this.getVehiculos();
+  },
+};
+</script>
