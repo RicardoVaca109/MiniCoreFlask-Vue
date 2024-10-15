@@ -5,6 +5,7 @@ from controllers.greetings_controller import greetings_bp
 from controllers.shark_controller import shark_bp
 from controllers.vehiculos_controllers import vehiculos_bp
 from controllers.propietarios_controller import propietarios_bp
+import os
 
 # Instanciamos una aplicacion de tipo FLask
 app = Flask(__name__)
@@ -21,7 +22,7 @@ app.register_blueprint(vehiculos_bp)
 app.register_blueprint(propietarios_bp)
 
 if __name__ == "__main__":
-    app.run(debug=True)
+     app.run(host='0.0.0.0', port=int(os.getenv('PORT', 5000)), debug=True) 
     
 # # Ruta para un Hello World
 # @app.route('/', methods = ['GET'])
