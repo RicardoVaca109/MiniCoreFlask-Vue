@@ -1,8 +1,12 @@
 **Proyecto MiniCore con Flask(Backend) y Vue(Frontend)**
-Inventario de Mecánica - CRUD MVC con Python, Flask y Vue.js
-Este proyecto tiene como propósito crear un sistema de inventario para una mecánica. Permite la gestión de propietarios y vehículos asociados mediante un sistema CRUD (Crear, Leer, Actualizar, Eliminar) implementado con la arquitectura MVC (Modelo-Vista-Controlador).
 
-La API backend se construyó usando Python y Flask, conectada a una base de datos MySQL, mientras que la interfaz de usuario (frontend) se implementa en Vue.js para proporcionar una experiencia de usuario interactiva y dinámica.
+Inventario de Mecánica - CRUD MVC con Python, Flask y Vue.js
+
+Este proyecto tiene como propósito crear un sistema de inventario para una mecánica. Permite la gestión de propietarios y 
+vehículos asociados mediante un sistema CRUD (Crear, Leer, Actualizar, Eliminar) implementado con la arquitectura MVC (Modelo-Vista-Controlador).
+
+La API backend se construyó usando Python y Flask, conectada a una base de datos MySQL, mientras que la interfaz de usuario (frontend) 
+se implementa en Vue.js para proporcionar una experiencia de usuario interactiva y dinámica.
 
 **Estructura del Proyecto**
 El proyecto está dividido en varias carpetas:
@@ -13,7 +17,8 @@ El proyecto está dividido en varias carpetas:
 -models: Esta carpeta contiene los modelos que interactúan directamente con la base de datos MySQL.
     *propietarios.py: Modelo que define la estructura y métodos de consulta para los propietarios.
     *vehiculos.py: Modelo que define la estructura y métodos de consulta para los vehículos.
-Vistas (Frontend): El frontend se desarrolla con Vue.js y contiene las vistas necesarias para interactuar con el usuario, permitiendo operaciones de registro, edición y eliminación de datos de propietarios y vehículos.
+Vistas (Frontend): El frontend se desarrolla con Vue.js y contiene las vistas necesarias para interactuar con el usuario, permitiendo operaciones 
+  de registro, edición y eliminación de datos de propietarios y vehículos.
 
 **Funcionalidades**
 El sistema permite realizar las siguientes operaciones para propietarios y vehículos:
